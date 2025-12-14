@@ -2,49 +2,77 @@
 import { TextField } from "@mui/material";
 
 const textFieldStyle = {
-    height: "100%",                          // 1) TextField outer wrapper height
+    height: "100%",
 
+    /* ---------------- INPUT ROOT ---------------- */
     "& .MuiOutlinedInput-root": {
-        height: "100%",                      // 2) Make input box fill height
+        height: "100%",
         alignItems: "center",
-        // 🔥 Disabled mode styling
+
         "&.Mui-disabled": {
-            backgroundColor: "rgba(255, 255, 255, 0.15)",   // dim background
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
             borderRadius: "4px",
 
             "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: "white !important",            // white border
+                borderColor: "white !important",
             },
 
             "& .MuiInputBase-input.Mui-disabled": {
-                WebkitTextFillColor: "white !important",    // text color white in disabled mode
-                opacity: 1,                                  // prevent greyed-out text
-            }
-        }
+                WebkitTextFillColor: "white !important",
+                opacity: 1,
+            },
+        },
     },
 
+    /* ---------------- INPUT TEXT ---------------- */
     "& .MuiInputBase-input": {
-        padding: "10px",                     // 3) Adjust padding so text stays centered
+        padding: "10px",
         color: "white",
-        height: "100%",                      // Optional if you want fully stretched input
+        height: "100%",
         boxSizing: "border-box",
     },
 
-    "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-    "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-    "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "white" }
+    /* ---------------- LABEL ---------------- */
+    "& .MuiInputLabel-root": {
+        color: "white",
+    },
+
+    "& .MuiInputLabel-root.Mui-focused": {
+        color: "white",
+    },
+
+    "& .MuiInputLabel-root.Mui-disabled": {
+        color: "white",
+    },
+
+    "& .MuiInputLabel-root.Mui-error": {
+        color: "white",
+    },
+
+    /* ---------------- BORDER ---------------- */
+    "& .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white",
+    },
+    "&:hover .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white",
+    },
+    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white",
+    },
 };
 
 
-export default function OTInput({ is_cancelled, value, onChange, type = "text" }) {
+export default function OTInput({ is_cancelled, value, onChange, type = "text", placeholder="", label="default" }) {
     return (
         <TextField
             fullWidth
             disabled={is_cancelled}
             type={type}
             sx={textFieldStyle}
+            placeholder={`${placeholder}`}
             value={value}
             onChange={onChange}
+            label={label}
         />
     );
 }

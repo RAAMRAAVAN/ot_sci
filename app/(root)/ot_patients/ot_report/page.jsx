@@ -39,6 +39,7 @@ const OTReport = () => {
         { label: "Patient Name", width: 300, key: "patient_name" },
         { label: "UHID", width: 200, key: "uhid" },
         { label: "Age", width: 80, key: "age" },
+        { label: "Gender", width: 120, key: "gender" },
         { label: "Diagnosis", width: 400, key: "diagnosis" },
         { label: "Surgeon Name", width: 220, key: "surgeon" },
         { label: "Waiting", width: 120, key: "is_waiting" },
@@ -192,6 +193,7 @@ const OTReport = () => {
                             <Box width={300} padding={1}><Typography color="white">{room.patient_name}</Typography></Box>
                             <Box width={200} padding={1}><Typography color="white">{room.uhid}</Typography></Box>
                             <Box width={80} padding={1}><Typography color="white" textAlign='center'>{room.age}</Typography></Box>
+                            <Box width={120} padding={1}><Typography color="white" textAlign='center'>{room.gender}</Typography></Box>
                             <Box width={400} padding={1}><Typography color="white">{room.diagnosis}</Typography></Box>
                             <Box width={220} padding={1}><Typography color="white">{room.surgeon}</Typography></Box>
                             <Box width={120} padding={1}><Typography color="white" textAlign='center'>{room.is_waiting ? 'Yes' : 'No'}</Typography></Box>

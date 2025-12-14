@@ -98,7 +98,13 @@ const OTEntryPage = () => {
                             </Typography>
                         </Grid>
 
-                        <Grid item xs={3} padding={1}>
+                        <Grid item xs={1} padding={1}>
+                            <Typography paddingLeft={1} fontWeight="bold" color="white" fontSize={18}>
+                                Gender
+                            </Typography>
+                        </Grid>
+
+                        <Grid item xs={2} padding={1}>
                             <Typography paddingLeft={1} fontWeight="bold" color="white" fontSize={18}>
                                 Diagnosis
                             </Typography>

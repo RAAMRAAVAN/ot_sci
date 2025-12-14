@@ -23,9 +23,9 @@ export async function POST(request) {
         // Insert new entry
         const insertSql = `
             INSERT INTO ot_entries 
-            (room_id, patient_name, uhid, age, diagnosis, surgeon, 
-             active_status, is_waiting, admission_date, admission_time)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (room_id, patient_name, uhid, age, gender, diagnosis, surgeon, 
+             active_status, is_waiting, admission_date, admission_time, is_under_preparation, is_in_preop)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
         const insertValues = [
@@ -33,12 +33,15 @@ export async function POST(request) {
             body.PatientName,
             body.UHID,
             body.Age,
+            body.Gender,
             body.Diagnosis,
             body.Surgeon,
             1,  // active_status = 1
             1,  // is_waiting = 1
             admissionDate,
-            admissionTime
+            admissionTime,
+            0,
+            0
         ];
 
         await conn.execute(insertSql, insertValues);

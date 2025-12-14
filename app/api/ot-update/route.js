@@ -13,6 +13,7 @@ export async function POST(request) {
       patient_name,
       uhid,
       age,
+      gender,
       diagnosis,
       surgeon,
       is_waiting,
@@ -41,7 +42,7 @@ export async function POST(request) {
 
     const sql = `
       UPDATE ot_entries SET
-        patient_name = ?, uhid = ?, age = ?, diagnosis = ?, surgeon = ?,
+        patient_name = ?, uhid = ?, age = ?, gender = ?, diagnosis = ?, surgeon = ?,
         is_waiting = ?, is_in_preop = ?, is_under_preparation = ?, is_in_ot = ?, 
         is_surgery_started = ?, is_surgery_completed = ?, is_shifted_recovery = ?
       WHERE entry_id = ?
@@ -51,6 +52,7 @@ export async function POST(request) {
       patient_name,
       uhid,
       age,
+      gender,
       diagnosis,
       surgeon,
       is_waiting ?? 0,

@@ -20,7 +20,8 @@ export default function OTStatusSwitches({
     is_in_ot, setOt,
     is_surgery_started, setSurgery,
     is_surgery_completed, setSurgeryCompleted,
-    is_shifted_recovery, setRecovery
+    is_shifted_recovery, setRecovery,
+    isChanged
 }) {
 
     const toggle = (value, setter) => setter(value === 1 ? 0 : 1);
@@ -191,7 +192,7 @@ export default function OTStatusSwitches({
                 ) : (
                     <Button
                         color="error"
-                        disabled={is_surgery_completed}
+                        disabled={is_surgery_completed || isChanged}
                         variant="contained"
                         sx={{
                             borderRadius: "20px",

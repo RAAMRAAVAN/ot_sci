@@ -41,6 +41,7 @@ export default function OTEntry({ ot_room, fetchOTRooms }) {
     const [PatientName, setPatientName] = useState("");
     const [UHID, setUHID] = useState("");
     const [Age, setAge] = useState("");
+    const [Gender, setGender] = useState();
     const [Diagnosis, setDiagnosis] = useState("");
     const [Surgeon, setSurgeon] = useState("");
 
@@ -52,11 +53,12 @@ export default function OTEntry({ ot_room, fetchOTRooms }) {
     const [is_surgery_completed, setSurgeryCompleted] = useState(0);
     const [is_shifted_recovery, setRecovery] = useState(0);
     const [is_cancelled, setCancelled] = useState(0);
+    // const [disableCancellation, setDisableCancellation] = useState(0);
 
     const isChanged =
         PatientName !== originalData.patient_name ||
         UHID !== originalData.uhid ||
-        Age !== originalData.age ||
+        Age !== originalData.age || Gender !== originalData.gender ||
         Diagnosis !== originalData.diagnosis ||
         Surgeon !== originalData.surgeon || is_waiting !== originalData.is_waiting ||
         is_in_preop !== originalData.is_in_preop ||
@@ -80,6 +82,7 @@ export default function OTEntry({ ot_room, fetchOTRooms }) {
             setPatientName(data.data.patient_name);
             setUHID(data.data.uhid);
             setAge(data.data.age);
+            setGender(data.data.gender)
             setDiagnosis(data.data.diagnosis);
             setSurgeon(data.data.surgeon);
 
@@ -103,6 +106,7 @@ export default function OTEntry({ ot_room, fetchOTRooms }) {
                 PatientName,
                 UHID,
                 Age,
+                Gender,
                 Diagnosis,
                 Surgeon
             })
@@ -165,11 +169,12 @@ export default function OTEntry({ ot_room, fetchOTRooms }) {
         setPatientName("");
         setUHID("");
         setAge("");
+        setGender('Male');
         setDiagnosis("");
         setSurgeon("");
         setCancelled(0);
         fetchOTRooms();
-        fetchLastEntry();
+        // fetchLastEntry();
     };
 
     return (
@@ -209,6 +214,7 @@ export default function OTEntry({ ot_room, fetchOTRooms }) {
                         Diagnosis={Diagnosis} setDiagnosis={setDiagnosis}
                         Surgeon={Surgeon} setSurgeon={setSurgeon}
                         isChanged={isChanged}
+                        Gender={Gender} setGender={setGender}
                         cancelOT={cancelOT}
                         // handleUpdate={handleUpdate}
                         is_waiting={is_waiting}
@@ -240,6 +246,7 @@ export default function OTEntry({ ot_room, fetchOTRooms }) {
                         PatientName={PatientName} setPatientName={setPatientName}
                         UHID={UHID} setUHID={setUHID}
                         Age={Age} setAge={setAge}
+                        Gender={Gender} setGender={setGender}
                         Diagnosis={Diagnosis} setDiagnosis={setDiagnosis}
                         Surgeon={Surgeon} setSurgeon={setSurgeon}
                         addDetails={addDetails}

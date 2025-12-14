@@ -15,6 +15,7 @@ export const exportToExcel = (data, fileName = "OT_Report.xlsx") => {
         "Patient Name": item.patient_name,
         "UHID": item.uhid,
         "Age": item.age,
+        "Gender": item.gender,
         "Diagnosis": item.diagnosis,
         "Surgeon Name": item.surgeon,
         "Waiting": item.is_waiting ? "Yes" : "No",

@@ -137,9 +137,12 @@ export default function LiveOTDashboard() {
                     <Stack spacing={0.5}>
                       <Typography><strong>Patient:</strong> {room.lastEntry.patient_name}</Typography>
                       <Typography><strong>UHID:</strong> {room.lastEntry.uhid}</Typography>
-                      <Typography><strong>Age:</strong> {room.lastEntry.age} Years</Typography>
+                      <Box display='flex'>
+                        <Typography><strong>Age:</strong> {room.lastEntry.age} Years</Typography>
+                        <Typography marginLeft={5}><strong>Sex:</strong> {room.lastEntry.gender}</Typography>
+                      </Box>
                       <Typography><strong>Surgeon:</strong> {room.lastEntry.surgeon}</Typography>
-
+                      <Typography><strong>Diagnosis:</strong> {room.lastEntry.diagnosis}</Typography>
                       <Box mt={1}>
                         <Chip
                           label={status.label}
