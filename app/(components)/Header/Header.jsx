@@ -41,7 +41,7 @@ const Header = () => {
     return (
         <>
             {/* Header Top Section */}
-            {/* <Box
+            <Box
                 sx={{
                     width: "100%",
                     display: "flex",
@@ -58,10 +58,10 @@ const Header = () => {
                 }}
             // mb={2}
             >
-                <Grid container alignItems="center" justifyContent="space-between" spacing={2} width="100%"> */}
+                <Grid container alignItems="center" justifyContent="space-between" spacing={2} width="100%">
                     {/* Logo & Hospital Name */}
 
-                    {/* <Grid
+                     <Grid
                         item
                         xs={12}
                         md={7}
@@ -121,10 +121,10 @@ const Header = () => {
                                     onClick={() => window.location.href = '/'}
                                 />}
                         </Box>
-                    </Grid> */}
+                    </Grid> 
 
                     {/* Contact Info and Social Icons */}
-                    {/* <Grid item xs={12} md={5} sx={{ textAlign: { xs: "center", md: "right" }, display: { xs: 'none', md: 'flex' }, flexDirection: 'column' }}>
+                     <Grid item xs={12} md={5} sx={{ textAlign: { xs: "center", md: "right" }, display: { xs: 'none', md: 'flex' }, flexDirection: 'column' }}>
                         <Typography
                             variant="h6"
                             component="a"
@@ -186,7 +186,7 @@ const Header = () => {
             >
                 <KeyboardArrowUp />
             </Fab>
-            <BottomNavigationComponent setMobileOpen={setMobileOpen} mobileOpen={mobileOpen}/> */}
+            <BottomNavigationComponent setMobileOpen={setMobileOpen} mobileOpen={mobileOpen}/>
         </>
     );
 };

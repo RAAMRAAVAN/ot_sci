@@ -21,7 +21,7 @@ const formatUHID = (val = "") =>
     val.toUpperCase().replace(/[^A-Z0-9.]/g, "");
 
 const isValidUHID = (val = "") =>
-    /^[A-Z]{3}\d{2}\.\d{9}$/.test(val);
+    /^[A-Z]{3}\d{2}\.\d{3,}$/.test(val);
 
 export default function OTFormOccupied({ ...props }) {
 

@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import Loader from "@/app/(components)/Loader";
-import { DoctorDetails } from "@/app/(components)/Global";
+import { color1, DoctorDetails } from "@/app/(components)/Global";
 import '@/lib/custom-dayjs-locale';
 import DINCModal from "@/app/(components)/DoctorCard/DINCModal";
 import { useSelector } from "react-redux";
@@ -74,7 +74,7 @@ const Overview = () => {
   if (loading || !DoctorsAvailability) return <Loader />;
 
   return (
-    <Box display="flex" width="100%" flexDirection="column" alignItems='center'>
+    <Box display="flex" width="100%" flexDirection="column" alignItems='center' marginBottom='150px'>
       <DINCModal open={open} handleClose={() => setOpen(false)} doctorDetails={doctorDetails} />
 
       <Grid container width='100%' sx={{ backgroundColor: "#f8f8f8", paddingX: 2 }} justifyContent='space-between'>
@@ -119,10 +119,11 @@ const Overview = () => {
 
         {/* Doctor Details */}
         <Grid item md={4} xs={12} display="flex" flexDirection="column" justifyContent="center" gap={1} padding={1}>
+          <Box display='flex' border='1px black sold' alignItems='center'><Typography fontWeight='bold' color={color1} fontSize={30} marginRight={1}>Department: </Typography><Typography fontSize={30}>{doctorDetails.depertment || ""}</Typography></Box>
           <Typography fontWeight="bolder" fontSize={24}>{doctorDetails.name}</Typography>
           <Box display='flex' border='1px black sold' alignItems='center'><Typography fontWeight='bold' color="gray" marginRight={1}>Designation: </Typography> <Typography>{doctorDetails.designation}</Typography></Box>
           <Box display='flex' border='1px black sold' alignItems='center'><Typography fontWeight='bold' color="gray" marginRight={1}>Specialization: </Typography> <Typography>{doctorDetails.specialization || ''}</Typography></Box>
-          <Box display='flex' border='1px black sold' alignItems='center'><Typography fontWeight='bold' color="gray" marginRight={1}>Department: </Typography><Typography>{doctorDetails.depertment || ""}</Typography></Box>
+          
           <Box display='flex' border='1px black sold' alignItems='center'><Typography fontWeight='bold' color="gray" marginRight={1} marginY={1}>Qualifications: </Typography> <Typography>{doctorDetails.qualification || ''}</Typography></Box>
         </Grid>
 
@@ -187,9 +188,9 @@ const Overview = () => {
           )}
         </Grid>
       </Grid>
-      <Box display='felx' width='90%' marginTop={5}>
+      {/* <Box display='felx' width='90%' marginTop={5}>
         <Typography fontWeight='bold' paddingX={1} >About {doctorDetails.name}</Typography>
-      </Box>
+      </Box> */}
       <Grid container display='none' width='90%' paddingY={1} paddingX={1}>
         <Grid item md={2} xs={12} display='flex' padding={1}>
           <Typography fontWeight='bold' fontSize='14px' color="gray">Achievements:
@@ -208,13 +209,13 @@ const Overview = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Grid container display='flex' width='90%' marginTop={1} marginBottom={5}>
+      {/* <Grid container display='flex' width='90%' marginTop={1} marginBottom={5}>
         <Grid item md={6} xs={12}>
           <Typography textAlign='justify' color="gray">
             {doctorDetails.profile_details}
           </Typography>
         </Grid>
-      </Grid>
+      </Grid> */}
     </Box>
   );
 };

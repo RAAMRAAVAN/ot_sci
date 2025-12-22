@@ -58,9 +58,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
-      <HeaderPage />
+      {/* <HeaderPage /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
       {/* <AnimatedImages /> */}
     </>
   );

@@ -35,7 +35,7 @@ const DoctorsDirectory = () => {
             const startIdleTimer = () => {
               clearTimeout(idleTimeout);
               idleTimeout = setTimeout(() => {
-                router.push("/doctorslider");
+                router.push("/kioskHome/doctorslider");
               }, 30000); // 10 seconds of no activity
             };
         

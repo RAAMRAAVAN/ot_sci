@@ -134,7 +134,7 @@ const CustomPopper = ({
                                                         setInputValue(doctor.name);
                                                         setOpenDoctors(false);
                                                         dispatch(setDoctorID(doctor.id));
-                                                        router.push('/consultants/doctor_details');
+                                                        router.push('/kioskHome/consultants/doctor_details');
                                                     }}
                                                 >
                                                     {doctor.name}
@@ -195,7 +195,7 @@ const CustomPopper = ({
                                                     onClick={() => {
                                                         setOpen(false);
                                                         setInputValue(department);
-                                                        router.push(`/consultants?department=${encodeURIComponent(department)}`);
+                                                        router.push(`/kioskHome/consultants?department=${encodeURIComponent(department)}`);
                                                     }}
                                                 >
                                                     {department}
@@ -299,7 +299,7 @@ const SearchDoctors = ({ doctors }) => {
                 }}
                 onChange={(event, newValue) => {
                     dispatch(setDoctorID(newValue.id));
-                    router.push('/consultants/doctor_details');
+                    router.push('/kioskHome/consultants/doctor_details');
                     setOpen(false);
                     
                 }}

@@ -31,7 +31,7 @@ const ContactPage = ({ handleClose, doctorDetails}) => {
                     <Typography  overflow="hidden"
                         textOverflow="ellipsis"
                         whiteSpace="nowrap">{doctorDetails.depertment}</Typography>
-                    <Link href={`/consultants/doctor_details`} passHref scroll={true} onClick={() => {dispatch(setDoctorID(doctorDetails.id));handleClose()}}>
+                    <Link href={`/kioskHome/consultants/doctor_details`} passHref scroll={true} onClick={() => {dispatch(setDoctorID(doctorDetails.id));handleClose()}}>
                         <Typography  color={color4} sx={{ cursor: 'pointer' }}>View Profile</Typography>
                     </Link>
                 </Grid>

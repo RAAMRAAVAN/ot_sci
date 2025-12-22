@@ -47,7 +47,7 @@ export default function OTFormNew({
     };
 
     // 🔹 UHID pattern check before submit
-    const isUHIDValid = /^[A-Z]{3}\d{2}\.\d{9}$/i.test(UHID);
+    const isUHIDValid = /^[A-Z]{3}\d{2}\.\d{4,}$/i.test(UHID);
 
     const handleSubmit = () => {
         if (!PatientName || !Age || !Gender || !Surgeon) {
@@ -78,7 +78,7 @@ export default function OTFormNew({
                 <OTInput
                     value={UHID}
                     onChange={handleUHIDChange}
-                    placeholder="Enter UHID (XYZ01.120002671)"
+                    placeholder="Enter UHID (XYZ01.1200021671)"
                     label='UHID'
                     error={UHID && !isUHIDValid}
                     helperText={UHID && !isUHIDValid ? "Format: XYZ01.120002671" : ""}

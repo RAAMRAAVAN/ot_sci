@@ -33,7 +33,7 @@ const resolveStatus = (entry) => {
     return { label: 'OT Cancelled', color: 'error' };
 
   if (entry.is_shifted_recovery)
-    return { label: 'Recovery', color: 'secondary' };
+    return { label: 'Recovery/ Post OP', color: 'secondary' };
 
   if (entry.is_surgery_completed)
     return { label: 'Surgery Completed', color: 'success' };

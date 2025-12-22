@@ -1,6 +1,6 @@
 'use client'
 import { Box } from "@mui/material";
-import DoctorSlider from "../../(components)/DoctorCard/DoctorSlider";
+import DoctorSlider from "../../../(components)/DoctorCard/DoctorSlider";
 
 const doctorslider = () => {
   return (

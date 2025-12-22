@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import { selectDoctors } from "@/redux/features/doctorSlice";
 import { Box, Grid } from "@mui/material";
-import NewDoctorCard from '../../(components)/NewDoctorCard';
+import NewDoctorCard from '../../../(components)/NewDoctorCard';
 const DisplayDoctors = ({ department }) => {
     const doctors = useSelector(selectDoctors);
     console.log("dept=", department);

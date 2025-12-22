@@ -1,8 +1,8 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import ScrollReveal from "../../(components)/Animation/ScrollReveal";
+import ScrollReveal from "../../../(components)/Animation/ScrollReveal";
 import { Suspense, useEffect } from "react";
-import Partners from "../../(components)/Partners/Partners";
+import Partners from "../../../(components)/Partners/Partners";
 import { useRouter } from "next/navigation";
 
 const OurPartners = () => {
@@ -13,7 +13,7 @@ const OurPartners = () => {
     const startIdleTimer = () => {
       clearTimeout(idleTimeout);
       idleTimeout = setTimeout(() => {
-        router.push("/");
+        router.push("/kioskHome");
       }, 10000); // 10 seconds of no activity
     };
 

@@ -64,7 +64,7 @@ const DoctorSlider = () => {
       dispatch(setPage(page + 1));
     }
     else{
-        router.push("/ourPartners");
+        router.push("/kioskHome/ourPartners");
         dispatch(setPage(1))
     }
   };

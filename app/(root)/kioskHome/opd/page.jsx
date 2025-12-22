@@ -52,7 +52,7 @@ const OPDDoctors = () => {
         const startIdleTimer = () => {
           clearTimeout(idleTimeout);
           idleTimeout = setTimeout(() => {
-            router.push("/doctorsDirectory");
+            router.push("/kioskHome/doctorsDirectory");
           }, 40000); // 10 seconds of no activity
         };
     

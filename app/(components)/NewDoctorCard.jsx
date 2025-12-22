@@ -143,7 +143,7 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                   </Typography>
 
                   <Link
-                    href={`/consultants/doctor_details`}
+                    href={`/kioskHome/consultants/doctor_details`}
                     passHref
                     scroll={true}
 

@@ -18,7 +18,7 @@ const KioskHome = () => {
     const startIdleTimer = () => {
       clearTimeout(idleTimeout);
       idleTimeout = setTimeout(() => {
-        router.push("/opd");
+        router.push("/kioskHome/opd");
       }, 10000); // 10 seconds of no activity
     };
 
@@ -67,7 +67,7 @@ const KioskHome = () => {
         >
           <Grid item xs={12} sm={6} md={2.4} height="300px" padding={3}>
             <Button
-              onClick={() => router.push("/opd")}
+              onClick={() => router.push("/kioskHome/opd")}
               sx={{
                 width: "100%",
                 boxShadow: 5,
@@ -87,7 +87,7 @@ const KioskHome = () => {
 
           <Grid item xs={12} sm={6} md={2.4} height="300px" padding={3}>
             <Button
-              onClick={() => router.push("/doctorsDirectory")}
+              onClick={() => router.push("/kioskHome/doctorsDirectory")}
               sx={{
                 width: "100%",
                 boxShadow: 5,
@@ -107,7 +107,7 @@ const KioskHome = () => {
 
           <Grid item xs={12} sm={6} md={2.4} height="300px" padding={3}>
             <Button
-              onClick={() => router.push("/doctorslider")}
+              onClick={() => router.push("/kioskHome/doctorslider")}
               sx={{
                 width: "100%",
                 boxShadow: 5,
@@ -127,7 +127,7 @@ const KioskHome = () => {
 
           <Grid item xs={12} sm={6} md={2.4} height="300px" padding={3}>
             <Button
-              onClick={() => router.push("/ourPartners")}
+              onClick={() => router.push("/kioskHome/ourPartners")}
               sx={{
                 width: "100%",
                 boxShadow: 5,

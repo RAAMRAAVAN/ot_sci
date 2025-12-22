@@ -2,7 +2,7 @@
 
 import { KeyboardArrowDown } from "@mui/icons-material";
 import { Box, Button, Grid, List, ListItem } from "@mui/material";
-import { color3, color4, MedantaOrange } from "../../(components)/Global";
+import { color3, color4, MedantaOrange } from "../../../(components)/Global";
 import DisplayDoctors from "./DisplayDoctors";
 import { useRouter, useSearchParams } from 'next/navigation';
 import { selectDoctors } from "@/redux/features/doctorSlice";
@@ -124,7 +124,7 @@ const Consultants = () => {
                                                 onClick={() => {
                                                     setOpen(false);
                                                     setValue('All Department');
-                                                    router.push(`/consultants`);
+                                                    router.push(`/kioskHome/consultants`);
                                                 }}
                                             >
                                                 All Departments
@@ -137,7 +137,7 @@ const Consultants = () => {
                                                 onClick={() => {
                                                     setOpen(false);
                                                     setValue(dept);
-                                                    router.push(`/consultants?department=${encodeURIComponent(dept)}`);
+                                                    router.push(`/kioskHome/consultants?department=${encodeURIComponent(dept)}`);
                                                 }}
                                             >
                                                 {dept}

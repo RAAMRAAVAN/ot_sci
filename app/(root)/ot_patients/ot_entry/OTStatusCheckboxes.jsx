@@ -150,7 +150,7 @@ export default function OTStatusSwitches({
 
             {/* Surgery Completed */}
             <Box display="flex" alignItems="center">
-                <Typography color="#53e85a" fontWeight="bold">Completed</Typography>
+                <Typography color="#53e85a" fontWeight="bold">Surgery Completed</Typography>
                 <Switch
                     checked={completed}
                     disabled={disableCompleted}
@@ -162,7 +162,7 @@ export default function OTStatusSwitches({
 
             {/* Recovery */}
             <Box display="flex" alignItems="center">
-                <Typography color="violet" fontWeight="bold">Recovery</Typography>
+                <Typography color="violet" fontWeight="bold">Recovery/ Post OP</Typography>
                 <Switch
                     checked={recovery}
                     disabled={disableRecovery}

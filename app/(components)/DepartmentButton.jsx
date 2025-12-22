@@ -119,7 +119,7 @@ const DepartmentButton = () => {
                                                 onClick={() => {
                                                     setOpen(false);
                                                     setValue(dept);
-                                                    router.push(`/consultants?department=${encodeURIComponent(dept)}`);
+                                                    router.push(`/kioskHome/consultants?department=${encodeURIComponent(dept)}`);
                                                 }}
                                             >
                                                 {dept}
